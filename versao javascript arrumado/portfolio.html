@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <!-- Div principal para o conteúdo -->
+    <div class="container">
+        <!-- Div para o menu de navegação -->
+        <div class="divmenu">
+            <nav>
+                <ul class="menu">
+                    <!-- Link para a página de perfil -->
+                    <li><a href="Perfil.html">Perfil</a></li>
+
+                    <!-- Item de menu com submenu de disciplinas -->
+                    <li><a href="disciplinas.html">Disciplinas</a></li>
+
+                    <!-- Link para a página de portfólio -->
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Seção de perfil -->
+        <div class="profile">
+            <h1>Portfolio</h1>
+
+            <!-- Abas para navegação interna -->
+            <div class="tabs">
+                <div class="tab active" data-tab="info" role="tab" tabindex="0" aria-selected="true">
+                    Ler Arquivo CSV
+                </div>
+                <div class="tab" data-tab="about" role="tab" tabindex="0" aria-selected="false">
+                    Fibonacci em C
+                </div>
+                <div class="tab" data-tab="contact" role="tab" tabindex="0" aria-selected="false">
+                    Alocação Dinâmica
+                </div>
+            </div>
+
+            <!-- Conteúdo das abas -->
+            <div class="tab-content active" id="info" role="tabpanel">
+                <h2>Ler Arquivo CSV</h2>
+                <p>Este código em C faz a leitura de um arquivo CSV chamado "Produtos.csv", linha por linha, e processa
+                    seus dados, armazenando-os em uma estrutura.</p>
+                <img class="galeria" src="img/lerarquivo.jpg" alt="Exemplo de leitura de arquivo CSV">
+            </div>
+
+            <div class="tab-content" id="about" role="tabpanel">
+                <h2>Fibonacci em C</h2>
+                <p>Este código C calcula e exibe a sequência de Fibonacci até um determinado número de termos que o
+                    usuário especifica.</p>
+                <img class="galeria" src="img/fibonacci.jpg" alt="Exemplo de cálculo da sequência de Fibonacci">
+            </div>
+
+            <div class="tab-content" id="contact" role="tabpanel">
+                <h2>Alocação Dinâmica</h2>
+                <p>Este código C faz a alocação dinâmica de memória para armazenar uma lista de inteiros fornecidos pelo
+                    usuário, permitindo que o usuário insira valores em um array cujo tamanho é ajustado conforme
+                    necessário.</p>
+                <img class="galeria" src="img/Alocação Dinamica.jpg" alt="Exemplo de alocação dinâmica de memória">
+            </div>
+        </div>
+    </div>
+
+    <!-- Script JavaScript para alternar o conteúdo das abas -->
+    <script>
+        function showTab(tabId) {
+            // Selecionar todas as abas e os conteúdos das abas
+            const tabs = document.querySelectorAll(".tab");
+            const tabContents = document.querySelectorAll(".tab-content");
+
+            // Remover a classe 'active' de todas as abas e conteúdos
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Adicionar a classe 'active' ao conteúdo correspondente e à aba clicada
+            document.getElementById(tabId).classList.add('active');
+            const activeTab = Array.from(tabs).find(tab => tab.dataset.tab === tabId);
+            if (activeTab) {
+                activeTab.classList.add('active');
+                activeTab.setAttribute('aria-selected', 'true');
+            }
+        }
+
+        // Adicionar eventos de clique às abas
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                const tabId = this.dataset.tab;
+                showTab(tabId);
+            });
+
+            // Acessibilidade: permitir navegação por teclado
+            tab.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const tabId = this.dataset.tab;
+                    showTab(tabId);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

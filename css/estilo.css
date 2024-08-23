@@ -1,0 +1,299 @@
+/* Estilos globais */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    /* Define a fonte do corpo do texto */
+    background-color: #121212;
+    /* Fundo escuro para o corpo da página */
+    color: #e0e0e0;
+    /* Cor clara para o texto para contraste com o fundo escuro */
+    margin: 0;
+    /* Remove margens padrão */
+    padding: 0;
+    /* Remove preenchimento padrão */
+}
+
+/* Estilos do container principal */
+.container {
+    width: 100%;
+    /* O container ocupa toda a largura disponível */
+    max-width: 1200px;
+    /* Define uma largura máxima para o container */
+    margin: 0 auto;
+    /* Centraliza o container horizontalmente */
+    padding: 20px;
+    /* Adiciona espaço interno ao container */
+    background-color: #1e1e1e;
+    /* Fundo escuro, um tom mais claro que o fundo da página */
+    border-radius: 8px;
+    /* Borda arredondada para o container */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    /* Sombra suave para dar profundidade */
+    border: 3px solid #4caf50;
+    /* Borda sutil e escura com cor verde */
+}
+
+/* Estilização para o menu de navegação */
+.divmenu {
+    display: flex;
+    /* Usa o layout flexível */
+    flex-direction: column;
+    /* Organiza os itens em uma coluna */
+    align-items: center;
+    /* Alinha os itens no centro horizontalmente */
+    margin-bottom: 50px;
+    /* Espaço abaixo do menu */
+}
+
+/* Estilos para o menu de navegação */
+.divmenu nav {
+    background-color: #1b1b1b;
+    /* Fundo escuro para o menu */
+    padding: 15px;
+    /* Espaço interno ao redor do menu */
+    border-radius: 8px;
+    /* Borda arredondada para o menu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    /* Sombra leve para o menu */
+}
+
+.divmenu .menu {
+    list-style: none;
+    /* Remove os marcadores da lista */
+    padding: 0;
+    /* Remove o preenchimento da lista */
+    margin: 0;
+    /* Remove a margem da lista */
+    display: flex;
+    /* Usa o layout flexível para os itens do menu */
+}
+
+.divmenu .menu li {
+    margin-right: 20px;
+    /* Espaço entre os itens do menu */
+    position: relative;
+    /* Define a posição relativa para posicionar submenus */
+}
+
+.divmenu .menu a {
+    color: #4caf50;
+    /* Cor verde vibrante para os links */
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+    font-weight: 600;
+    /* Fonte em negrito para os links */
+    padding: 8px 16px;
+    /* Espaço interno ao redor dos links */
+    border-radius: 5px;
+    /* Borda arredondada para os links */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transição suave para efeitos de hover */
+}
+
+.divmenu .menu a:hover {
+    background-color: #333;
+    /* Fundo escuro ao passar o mouse */
+    color: #e0e0e0;
+    /* Cor clara do texto ao passar o mouse */
+}
+
+.divmenu .menu li ul {
+    list-style: none;
+    /* Remove os marcadores da lista */
+    padding: 0;
+    /* Remove o preenchimento da lista */
+    margin: 0;
+    /* Remove a margem da lista */
+    display: none;
+    /* Oculta o submenu por padrão */
+    position: absolute;
+    /* Posiciona o submenu de forma absoluta em relação ao item pai */
+    top: 100%;
+    /* Posiciona o submenu logo abaixo do item pai */
+    left: 0;
+    /* Alinha o submenu à esquerda do item pai */
+    background-color: #2c2c2c;
+    /* Fundo escuro para submenus */
+    border-radius: 8px;
+    /* Borda arredondada para o submenu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    /* Sombra para o submenu */
+}
+
+.divmenu .menu li:hover ul {
+    display: block;
+    /* Exibe o submenu ao passar o mouse sobre o item pai */
+}
+
+.divmenu .menu li ul li {
+    margin: 0;
+    /* Remove a margem dos itens do submenu */
+}
+
+.divmenu .menu li ul li a {
+    color: #e0e0e0;
+    /* Cor clara para o texto dos submenus */
+    text-decoration: none;
+    /* Remove o sublinhado dos links dos submenus */
+    display: block;
+    /* Faz os links dos submenus ocuparem toda a largura do item */
+    padding: 10px 20px;
+    /* Espaço interno ao redor dos links dos submenus */
+    transition: background-color 0.3s;
+    /* Transição suave para efeitos de hover */
+}
+
+.divmenu .menu li ul li a:hover {
+    background-color: #444;
+    /* Fundo escuro ao passar o mouse sobre os itens do submenu */
+}
+
+/* Estilos para a seção do perfil */
+.profile {
+    margin-top: 20px;
+    /* Espaço acima da seção do perfil */
+    text-align: center;
+    /* Centraliza o texto dentro da seção do perfil */
+}
+
+.profile img {
+    width: 100%;
+    /* Imagem ocupa toda a largura disponível do container */
+    max-width: 250px;
+    /* Largura máxima para a imagem */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    border-radius: 50%;
+    /* Torna a imagem circular */
+    border: 4px solid #4caf50;
+    /* Borda verde ao redor da imagem */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    /* Sombra mais pronunciada para a imagem */
+    margin: 0 auto;
+    /* Centraliza a imagem horizontalmente */
+    display: block;
+    /* Garante que a imagem seja exibida como bloco */
+}
+
+/* Estilos para as abas */
+.tabs {
+    display: flex;
+    /* Usa o layout flexível para as abas */
+    margin-top: 20px;
+    /* Espaço acima das abas */
+    border-bottom: 2px solid #333;
+    /* Borda de separação na parte inferior das abas */
+}
+
+.tab {
+    flex: 1;
+    /* Faz com que cada aba ocupe uma parte igual do espaço disponível */
+    text-align: center;
+    /* Centraliza o texto dentro das abas */
+    padding: 15px;
+    /* Espaço interno ao redor do texto das abas */
+    cursor: pointer;
+    /* Muda o cursor para uma mão ao passar sobre a aba */
+    border: 1px solid #333;
+    /* Borda escura ao redor das abas */
+    border-radius: 8px 8px 0 0;
+    /* Borda arredondada para a parte superior das abas */
+    background-color: #1e1e1e;
+    /* Fundo escuro para as abas */
+    color: #e0e0e0;
+    /* Cor clara para o texto das abas */
+    font-weight: 600;
+    /* Fonte em negrito para o texto das abas */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transição suave para efeitos de hover */
+}
+
+.tab.active {
+    background-color: #121212;
+    /* Fundo ainda mais escuro para a aba ativa */
+    border-bottom: 2px solid #4caf50;
+    /* Linha de destaque verde para a aba ativa */
+}
+
+.tab-content {
+    display: none;
+    /* Oculta o conteúdo das abas por padrão */
+    padding: 20px;
+    /* Espaço interno ao redor do conteúdo das abas */
+    border: 1px solid #333;
+    /* Borda escura ao redor do conteúdo das abas */
+    border-radius: 0 0 8px 8px;
+    /* Borda arredondada para a parte inferior do conteúdo das abas */
+    background-color: #1e1e1e;
+    /* Fundo escuro para o conteúdo das abas */
+    color: #e0e0e0;
+    /* Cor clara para o texto dentro do conteúdo das abas */
+}
+
+.tab-content.active {
+    display: block;
+    /* Exibe o conteúdo da aba ativa */
+}
+
+/* Estilos para imagens dentro das abas */
+.profile div img {
+    width: 100%;
+    /* Imagem ocupa toda a largura disponível do container */
+    max-width: 700px;
+    /* Largura máxima para a imagem */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    border-radius: 15px;
+    /* Borda arredondada para a imagem */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    /* Sombra mais pronunciada para a imagem */
+    margin: 20px auto;
+    /* Espaço ao redor da imagem e centraliza horizontalmente */
+    display: block;
+    /* Garante que a imagem seja exibida como bloco */
+}
+
+/* Estilos para os títulos e parágrafos dentro das abas */
+.tab-content h2 {
+    font-size: 28px;
+    /* Tamanho da fonte para títulos principais */
+    margin-bottom: 15px;
+    /* Espaço abaixo dos títulos principais */
+    color: #4caf50;
+    /* Cor verde para títulos principais */
+    font-weight: 700;
+    /* Fonte em negrito para títulos principais */
+}
+
+.tab-content h3 {
+    font-size: 22px;
+    /* Tamanho da fonte para subtítulos */
+    margin-bottom: 10px;
+    /* Espaço abaixo dos subtítulos */
+    color: #e0e0e0;
+    /* Cor clara para subtítulos */
+}
+
+.tab-content p {
+    font-size: 16px;
+    /* Tamanho da fonte para parágrafos */
+    line-height: 1.6;
+    /* Altura da linha para melhorar a legibilidade */
+    margin-bottom: 20px;
+    /* Espaço abaixo dos parágrafos */
+}
+
+/* Estilos para blocos de código */
+.tab-content pre {
+    background-color: #2c2c2c;
+    /* Fundo escuro para blocos de código */
+    padding: 15px;
+    /* Espaço interno ao redor do código */
+    border-radius: 8px;
+    /* Borda arredondada para blocos de código */
+    overflow-x: auto;
+    /* Permite rolar horizontalmente se o código for muito largo */
+    color: #e0e0e0;
+    /* Cor clara para o código */
+    font-size: 14px;
+    /* Tamanho da fonte para o código */
+}

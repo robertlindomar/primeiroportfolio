@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Perfil</title>
+</head>
+
+<body>
+
+    <!-- Div principal para o conteúdo do perfil -->
+    <div class="container">
+        <!-- Div para o menu de navegação -->
+        <div class="divmenu">
+            <nav>
+                <ul class="menu">
+                    <!-- Link para a página de perfil -->
+                    <li><a href="index.html">Perfil</a></li>
+
+                    <!-- Item de menu com submenu de disciplinas -->
+                    <li><a href="disciplinas.html">Disciplinas</a></li>
+
+                    <!-- Link para a página de portfólio -->
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Seção de perfil -->
+        <div class="profile">
+            <!-- Imagem do perfil -->
+            <img src="img/foto.jpg" alt="Foto de Robert Lindomar" aria-label="Foto do Perfil">
+            <h1>Robert Lindomar</h1> <!-- Nome do usuário -->
+
+            <!-- Abas para navegação interna -->
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('info')" role="tab" tabindex="0" aria-selected="true">
+                    Informações Pessoais</div>
+                <div class="tab" onclick="showTab('about')" role="tab" tabindex="0" aria-selected="false">Sobre Mim
+                </div>
+                <div class="tab" onclick="showTab('contact')" role="tab" tabindex="0" aria-selected="false">Contato
+                </div>
+            </div>
+
+            <!-- Conteúdo das abas -->
+            <div class="tab-content active" id="info" role="tabpanel">
+                <h2>Informações Pessoais</h2>
+                <p>Nome: Robert Lindomar</p>
+                <p>Idade: 24</p>
+                <p>Aparecida do Taboado, Mato Grosso do Sul, Brasil</p>
+            </div>
+
+            <div class="tab-content" id="about" role="tabpanel">
+                <h2>Sobre Mim</h2>
+                <p>Eu sou um entusiasta da tecnologia e amo aprender sobre programação e desenvolvimento web.</p>
+            </div>
+
+            <div class="tab-content" id="contact" role="tabpanel">
+                <h2>Contato</h2>
+                <p>Email: robertlindomarfaul@gmail.com</p> <!-- Corrija o email se necessário -->
+                <p>Telefone: (67) 9 9891-1380</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script JavaScript para alternar o conteúdo das abas -->
+    <script>
+        function showTab(tabId) {
+            // Declarar variáveis para as abas e os conteúdos das abas
+            const tabs = document.querySelectorAll(".tab");
+            const tabContents = document.querySelectorAll(".tab-content");
+
+            // Remover a classe 'active' de todas as abas e conteúdo
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Adicionar a classe 'active' ao conteúdo correspondente e à aba clicada
+            document.getElementById(tabId).classList.add('active');
+            tabs.forEach(tab => {
+                if (tab.textContent === document.querySelector(`#${tabId} h2`).textContent) {
+                    tab.classList.add('active');
+                    tab.setAttribute('aria-selected', 'true');
+                } else {
+                    tab.setAttribute('aria-selected', 'false');
+                }
+            });
+        }
+
+        // Acessibilidade: permitir navegação por teclado
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    showTab(this.textContent.toLowerCase());
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

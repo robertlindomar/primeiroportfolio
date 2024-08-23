@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>portfolio</title>
+
+</head>
+
+<body>
+
+    </div>
+
+
+    <div class="container">
+        <!-- Div para o menu de navegação -->
+        <div class="divmenu">
+            <nav>
+                <ul class="menu">
+                    <!-- Link para a página de perfil -->
+                    <li><a href="index.html">Perfil</a></li>
+
+                    <!-- Item de menu com submenu de disciplinas -->
+                    <li><a href="disciplinas.html">Disciplinas</a></li>
+
+                    <!-- Link para a página de portfólio -->
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <div class="profile">
+            <img src="img/foto.jpg" alt="Foto do Perfil">
+            <h1>Portfolio</h1>
+            <p></p>
+            <p></p>
+            <p></p>
+
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('info')">Ler Aquivo CSV</div>
+                <div class="tab" onclick="showTab('about')">fibonacci em C</div>
+                <div class="tab" onclick="showTab('contact')">Alocação Dinamica</div>
+            </div>
+
+            <!-- Criar as Divs com as informações-->
+            <div class="tab-content active" id="info">
+                <h2>Ler Aquivo CSV</h2>
+                <p>Este código em C faz a leitura de um arquivo CSV chamado "Produtos.csv", linha por linha, e processa
+                    seus dados, armazenando-os em uma estrutura chamada.</p>
+                <img class="galeria" src="img/lerarquivo.jpg" alt="Foto do Perfil">
+            </div>
+
+            <div class="tab-content" id="about">
+                <h2>fibonacci em C</h2>
+                <p>Este código C calcula e exibe a sequência de Fibonacci até um determinado número de termos que o
+                    usuário especifica.</p>
+                <img class="galeria" src="img/fibonacci.jpg" alt="Foto do Perfil"> <!-- Alterado de id para class -->
+            </div>
+
+            <div class="tab-content" id="contact">
+                <h2>Alocação Dinamica</h2>
+                <p>Este código C faz a alocação dinâmica de memória para armazenar uma lista de inteiros fornecidos pelo
+                    usuário, permitindo que o usuário insira valores em um array cujo tamanho é ajustado conforme
+                    necessário.</p>
+                <img class="galeria" src="img/Alocação Dinamica.jpg" alt="Foto do Perfil">
+                <!-- Alterado de id para class -->
+            </div>
+
+            <!-- Script JavaScript para alternar o conteúdo das abas -->
+            <script>
+                function showTab(tabId) {
+                    // Declarar variáveis para as abas e os conteúdos das abas
+                    const tabs = document.querySelectorAll(".tab");
+                    const tabContents = document.querySelectorAll(".tab-content");
+
+                    // Remover a classe 'active' de todas as abas
+                    tabs.forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+
+                    // Remover a classe 'active' de todos os conteúdos
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+
+                    // Adicionar a classe 'active' ao conteúdo correspondente à aba clicada
+                    const selecionado = document.querySelector(`#${tabId}`);
+                    selecionado.classList.add('active');
+
+                    // Adicionar a classe 'active' à aba clicada
+                    const itemSelecionado = document.querySelector(`.tab[data-tab="${tabId}"]`);
+                    itemSelecionado.classList.add('active');
+                }
+            </script>
+
+</body>
+
+</html>
